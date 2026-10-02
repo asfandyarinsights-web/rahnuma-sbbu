@@ -5,9 +5,74 @@
 
 /* 1. CSS Custom Properties */
 
+/* Light theme */
+:root {
+    --color-primary: #1D4ED8;
+    --color-primary-hover: #1E40AF;
+
+    --color-accent: #F59E0B;
+    --color-accent-text: #92400E;
+
+    --color-background: #F8FAFC;
+    --color-surface: #FFFFFF;
+    --color-surface-alt: #EEF2F7;
+
+    --color-text: #0F172A;
+    --color-text-muted: #475569;
+
+    --color-border: #D5DCE6;
+    --color-border-strong: #64748B;
+
+    --color-success: #15803D;
+    --color-success-bg: #DCFCE7;
+
+    --color-warning: #B45309;
+    --color-warning-bg: #FEF3C7;
+
+    --color-error: #B91C1C;
+    --color-error-bg: #FEE2E2;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --color-primary: #7AA2FF;
+    --color-primary-hover: #9DBBFF;
+
+    --color-accent: #FBBF24;
+    --color-accent-text: #FBBF24;
+
+    --color-background: #0B1220;
+    --color-surface: #131C2E;
+    --color-surface-alt: #1B2740;
+
+    --color-text: #E5EAF3;
+    --color-text-muted: #A3AFC2;
+
+    --color-border: #2A3752;
+    --color-border-strong: #7C8AA5;
+
+    --color-success: #4ADE80;
+    --color-success-bg: #14532D;
+
+    --color-warning: #FBBF24;
+    --color-warning-bg: #713F12;
+
+    --color-error: #F87171;
+    --color-error-bg: #7F1D1D;
+}
+
 
 /* 2. Base / Reset Styles */
 
+html {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
 
 /* 3. Global Typography */
 
