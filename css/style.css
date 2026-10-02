@@ -59,6 +59,9 @@
 --shadow-sm: 0 1px 2px rgb(15 23 42 / 0.08);
 --shadow-md: 0 4px 6px rgb(15 23 42 / 0.10);
 --shadow-lg: 0 10px 15px rgb(15 23 42 / 0.12);
+
+/* Layout */
+--container-max: 75rem;  /* 75rem = 1200px*/
 }
 
 /* Dark theme */
@@ -98,15 +101,25 @@
 
 /* 2. Base / Reset Styles */
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html {
     background-color: var(--color-background);
     color: var(--color-text);
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: var(--color-background);
     color: var(--color-text);
+    margin: 0;
+    min-width: 320px;
 }
+
 
 /* 3. Global Typography */
 
@@ -171,7 +184,29 @@ nav a {
 
 /* 5. Layout & Container */
 
+.container {
+    width: min(100% - 2rem, var(--container-max));
+    margin-inline: auto;
 
+}
+
+img,
+video,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+@media (min-width: 48rem) {
+    .container {
+        width: min(100% - 3rem, var(--container-max));
+    }
+}
+
+@media (min-width: 64rem) {
+    .container {
+        width: min(100% - 4rem, var(--container-max));
+    }
+}
 /* 6. Reusable Components */
 
 
