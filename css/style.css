@@ -219,6 +219,55 @@ svg {
 
 /* 7. Responsive Rules */
 
+/* Mobile-first base */
+body {
+    overflow-x: hidden;
+}
+
+@media (min-width: 48rem) {
+    /* Tablet layout */
+    @media (min-width: 48rem) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    body {
+        font-size: 1.125rem;
+    }
+}
+}
+
+@media (min-width: 64rem) {
+    /* Desktop layout */
+    @media (min-width: 64rem) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+}
+}
+@media (max-width: 30rem) {
+    button,
+    .button {
+        width: 100%;
+    }
+}
+
+p,
+li {
+    max-width: 65ch;
+}
 
 /* 8. Accessibility & Motion */
 :focus-visible {
