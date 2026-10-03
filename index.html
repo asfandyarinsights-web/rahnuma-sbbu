@@ -10,20 +10,33 @@
 
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">Rahnuma SBBU</a>
+    <header class="site-header">
+        <nav class="site-nav" aria-label="Main navigation">
 
-            <ul>
-                <li><a href="pages/admission.html">Admission</a></li>
-                <li><a href="pages/departments.html">Departments</a></li>
-                <li><a href="pages/careers.html">Careers</a></li>
-                <li><a href="pages/roadmap.html">Roadmap</a></li>
-                <li><a href="pages/resources.html">Resources</a></li>
-                <li><a href="pages/practice.html">Practice</a></li>
-                <li><a href="pages/mock-test.html">Mock Test</a></li>
-                <li><a href="pages/community.html">Community</a></li>
-            </ul>
+            <div class="container">
+
+                <a href="index.html" class="site-logo">Rahnuma SBBU</a>
+
+                <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
+                    <span aria-hidden="true">☰</span>
+                </button>
+
+                <div class="nav-menu" id="main-navigation">
+                    <a href="pages/admission.html">Admission</a>
+                    <a href="pages/departments.html">Departments</a>
+                    <a href="pages/careers.html">Careers</a>
+                    <a href="pages/roadmap.html">Roadmap</a>
+                    <a href="pages/resources.html">Resources</a>
+                    <a href="pages/practice.html">Practice</a>
+                    <a href="pages/mock-test.html">Mock Test</a>
+                    <a href="pages/community.html">Community</a>
+                </div>
+
+                <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+                    <span aria-hidden="true">☾</span>
+                </button>
+            </div>
+        
         </nav>
     </header>
 
