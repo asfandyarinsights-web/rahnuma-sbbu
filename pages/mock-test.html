@@ -10,11 +10,44 @@
 
 <body>
 
-    <header>
-        <nav>
-            <a href="../index.html">Rahnuma SBBU</a>
-        </nav>
-    </header>
+    <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+        <div class="container">
+
+            <a href="../index.html" class="site-logo">
+                Rahnuma SBBU
+            </a>
+
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="main-navigation">
+                <span aria-hidden="true">☰</span>
+            </button>
+
+            <div class="nav-menu" id="main-navigation" hidden>
+                <a href="admission.html">Admission</a>
+                <a href="departments.html">Departments</a>
+                <a href="careers.html">Careers</a>
+                <a href="roadmap.html">Roadmap</a>
+                <a href="resources.html">Resources</a>
+                <a href="practice.html">Practice</a>
+                <a href="mock-test.html">Mock Test</a>
+                <a href="community.html">Community</a>
+            </div>
+
+            <button
+                class="theme-toggle"
+                type="button"
+                aria-label="Toggle color theme">
+                <span aria-hidden="true">☾</span>
+            </button>
+
+        </div>
+    </nav>
+</header>
 
     <main>
         <h1>Mock Testing</h1>
@@ -24,6 +57,6 @@
     <footer>
         <p>&copy; 2026 Rahnuma SBBU</p>
     </footer>
-
+    <script src="../js/navigation.js"></script>
 </body>
 </html>

@@ -267,6 +267,12 @@ svg {
     background-color: var(--color-surface-alt);
 }
 
+.nav-menu a[aria-current="page"] {
+    color: var(--color-primary);
+    background-color: var(--color-surface-alt);
+    font-weight: 600;
+}
+
 .theme-toggle {
     display: inline-flex;
     align-items: center;
