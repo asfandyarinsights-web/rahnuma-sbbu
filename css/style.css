@@ -227,7 +227,7 @@ svg {
     display: flex;
     align-items: center;
     min-height: 4.5rem;
-    gap: var(--space-6);
+    gap: var(--space-3);
 }
 
 .site-logo {
@@ -253,13 +253,14 @@ svg {
     align-items: center;
     justify-content: center;
     min-height: var(--touch-target-min);
-    padding: 0 var(--space-3);
+    padding:0 0.4rem;
     color: var(--color-text-muted);
     text-decoration: none;
     border-radius: var(--radius-md);
     transition:
     color 180ms ease,
     background-color 180ms ease;
+    font-size: 0.9rem;
 }
 
 .nav-menu a:hover {
@@ -475,4 +476,47 @@ textarea {
 
 .skip-link:focus-visible {
     top: var(--space-4);
+}
+
+/* ========================================
+   Large Desktop Navigation
+   1280px and above
+   ======================================== */
+@media (min-width: 80rem) {
+    .site-nav .container {
+        gap: var(--space-6);
+    }
+
+    .nav-menu {
+        gap: var(--space-2);
+    }
+
+    .nav-menu a {
+        padding: 0 var(--space-3);
+        font-size: 1rem;
+    }
+}
+/* ========================================
+   Extra Large Desktop Navigation
+   1440px and above
+   ======================================== */
+
+@media (min-width: 90rem) {
+    .site-nav .container {
+        width: min(100% - 4rem, 85rem);
+        gap: var(--space-8);
+    }
+
+    .nav-menu {
+        gap: var(--space-3);
+    }
+
+    .nav-menu a {
+        padding: 0 var(--space-4);
+        font-size: 1rem;
+    }
+
+    .site-logo {
+        font-size: 1.35rem;
+    }
 }
