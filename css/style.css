@@ -520,3 +520,114 @@ textarea {
         font-size: 1.35rem;
     }
 }
+
+/* ========================================
+   Landing Page Hero
+   ======================================== */
+
+.hero {
+    padding: var(--space-12) 0;
+    background-color: var(--color-background);
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-eyebrow {
+    margin: 0 0 var(--space-3);
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.hero h1 {
+    max-width: 15ch;
+    margin: 0;
+}
+
+.hero-description {
+    max-width: 60ch;
+    margin: var(--space-5) auto 0;
+    color: var(--color-text-muted);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-top: var(--space-7);
+}
+
+/* Hero Buttons */
+
+.hero-actions .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--touch-target-min);
+    padding: 0 var(--space-5);
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease;
+}
+
+.hero-actions .button-primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.hero-actions .button-primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-1px);
+}
+
+.hero-actions .button-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.hero-actions .button-secondary:hover {
+    background-color: var(--color-surface-alt);
+    color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}
+
+.hero-actions .button:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 2px;
+}
+
+/* Hero Responsive Layout */
+
+@media (max-width: 30rem) {
+    .hero {
+        padding: var(--space-10) 0;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+    }
+
+    .hero-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .hero-actions .button {
+        width: 100%;
+    }
+}
