@@ -631,3 +631,185 @@ textarea {
         width: 100%;
     }
 }
+
+/* ========================================
+   Student Journey
+   ======================================== */
+
+.journey {
+    padding: var(--space-12) 0;
+    background-color: var(--color-surface-alt);
+}
+
+.journey .container {
+    text-align: center;
+}
+
+.journey .section-eyebrow,
+.journey h2,
+.journey .section-description {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.journey .section-eyebrow {
+    margin-bottom: var(--space-3);
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.journey h2 {
+    margin-top: 0;
+}
+
+.journey .section-description {
+    max-width: 60ch;
+    margin-top: var(--space-5);
+    color: var(--color-text-muted);
+}
+
+/* ========================================
+   Journey List
+   NEW: the list is centered with margin auto.
+   ======================================== */
+
+.journey-list {
+    max-width: 48rem;
+    margin: var(--space-8) auto 0;   /* auto centers the list */
+    padding: 0;
+    list-style: none;
+    text-align: left;                /* text stays left-aligned inside the centered section */
+}
+
+/* ========================================
+   Journey Step
+   NEW: no card styling. The bottom padding creates the space between steps.
+   ======================================== */
+
+.journey-step {
+    position: relative;              /* lets the line be positioned inside this item */
+}
+
+.journey-step a {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: 0 0 var(--space-8);     /* space below each step */
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.journey-step:last-child a {
+    padding-bottom: 0;               /* no extra space after the last step */
+}
+
+.journey-step a:hover strong {
+    color: var(--color-primary);     /* hover effect, since the card is gone */
+}
+
+/* ========================================
+   Journey Step Number (the dot)
+   NEW: z-index 1 puts the dot above the line.
+   ======================================== */
+
+.journey-step-number {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* ========================================
+   Journey Step Content (text beside the dot)
+   CHANGE: added padding-top to line the text up with the dot.
+   ======================================== */
+
+.journey-step-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding-top: 0.2rem;
+}
+
+.journey-step-content strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.journey-step-content span {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ========================================
+   Journey Step Connection (the vertical line)
+   CHANGE: uses top and bottom instead of a fixed height.
+   It starts at the bottom of this dot and ends where the next dot begins.
+   left = dot center (1.25rem) minus half the line width (1px).
+   The old transform is removed because the calc already centers it.
+   ======================================== */
+
+.journey-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 2.5rem;
+    bottom: 0;
+    left: calc(1.25rem - 1px);
+    width: 2px;
+    background-color: var(--color-border-strong);
+}
+
+
+/* ========================================
+   Journey — Horizontal Layout
+   Tablet and Desktop
+   ======================================== */
+
+@media (min-width: 48rem) {
+    .journey-list {
+        max-width: none;
+        margin-top: var(--space-10);
+
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: var(--space-4);
+    }
+
+    .journey-step {
+        position: relative;
+    }
+
+    .journey-step a {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-3);
+        padding: 0;
+        text-align: center;
+    }
+
+    .journey-step-content {
+        align-items: center;
+        padding-top: 0;
+    }
+
+    /* Horizontal connecting line */
+    .journey-step:not(:last-child)::after {
+        top: 1.25rem;
+        left: calc(50% + 1.25rem);
+        width: calc(100% - 0.5rem);
+        height: 2px;
+        background-color: var(--color-border-strong);
+        bottom: auto;
+    }
+}
