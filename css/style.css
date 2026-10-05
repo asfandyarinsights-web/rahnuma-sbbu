@@ -813,3 +813,182 @@ textarea {
         bottom: auto;
     }
 }
+
+/* ========================================
+   Preparation Section
+   ======================================== */
+
+.preparation {
+    padding: var(--space-12) 0;
+    background-color: var(--color-background);
+}
+
+.preparation .container {
+    text-align: center;
+}
+
+.preparation .section-eyebrow,
+.preparation h2,
+.preparation .section-description {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.preparation .section-eyebrow {
+    margin-bottom: var(--space-3);
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.preparation h2 {
+    margin-top: 0;
+}
+
+.preparation .section-description {
+    max-width: 60ch;
+    margin-top: var(--space-5);
+    color: var(--color-text-muted);
+}
+
+
+
+/* ========================================
+   Preparation Card Icon
+   ======================================== */
+
+.preparation-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.75rem;
+    height: 2.75rem;
+
+    margin-bottom: var(--space-4);
+
+    border-radius: var(--radius-md);
+
+    background-color: var(--color-surface-alt);
+    color: var(--color-primary);
+
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+/* ========================================
+   Preparation List (the grid)
+   CHANGE: renamed from .preparation-grid to match your HTML.
+   padding: 0 removes any default spacing.
+   ======================================== */
+
+.preparation-list {
+    display: grid;
+    grid-template-columns: 1fr;       /* one column for now, responsive comes in 3.4.7 */
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+/* ========================================
+   Preparation Card
+   CHANGE: position: relative lets the link cover the whole card (see below).
+   ======================================== */
+
+.preparation-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-6);
+
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    color: var(--color-text);
+    text-align: left;
+
+    transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease;
+}
+
+.preparation-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   Preparation Card Content
+   CHANGE: flex-grow on the paragraph pushes every link to the bottom,
+   so links line up even when descriptions have different lengths.
+   ======================================== */
+
+.preparation-card h3 {
+    margin: 0;
+}
+
+.preparation-card p {
+    flex-grow: 1;
+    margin: var(--space-2) 0 0;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ========================================
+   Preparation Card Link
+   CHANGE: styles the plain <a> in your HTML.
+   ======================================== */
+
+.preparation-card a {
+    display: inline-flex;
+    align-items: center;
+    margin-top: var(--space-4);
+    color: var(--color-primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.preparation-card a:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+/* Makes the whole card clickable, not just the link text.
+   The invisible layer covers the card because the card is position: relative. */
+.preparation-card a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+}
+
+/* Keyboard focus: show the outline around the whole card instead of only the link text */
+.preparation-card a:focus-visible {
+    outline: none;
+}
+
+.preparation-card a:focus-visible::after {
+    outline: var(--focus-ring);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   Preparation — Responsive Layout
+   ======================================== */
+
+@media (min-width: 48rem) {
+    .preparation-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 64rem) {
+    .preparation-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
