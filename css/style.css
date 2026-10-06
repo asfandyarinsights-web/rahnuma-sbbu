@@ -1284,3 +1284,410 @@ textarea {
         max-width: 64rem;
     }
 }
+
+/* ========================================
+   Community Section
+   ======================================== */
+
+.community {
+    padding: var(--space-12) 0;
+    background-color: var(--color-background);
+    border-top: 1px solid var(--color-border);
+}
+
+.community .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.community .section-eyebrow {
+    margin: 0 auto var(--space-3);
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.community h2 {
+    max-width: 22ch;
+    margin: 0 auto;
+}
+
+.community .section-description {
+    max-width: 60ch;
+    margin: var(--space-5) auto 0;
+    color: var(--color-text-muted);
+}
+
+/* ========================================
+   Community Button
+   ======================================== */
+
+.community .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--touch-target-min);
+    margin-top: var(--space-8);
+    padding: 0 var(--space-6);
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    background-color: var(--color-primary);
+    color:#ffffff;  /* readable on the primary color in both themes */
+
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background-color 180ms ease,
+        transform 180ms ease;
+}
+
+.community .button:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-1px);
+}
+
+.community .button:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 3px;
+}
+
+/* ========================================
+   Community — Responsive Layout
+   ======================================== */
+
+@media (min-width: 48rem) {
+    .community {
+        padding: var(--space-16) 0;
+    }
+}
+
+@media (max-width: 30rem) {
+    .community .button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .community .button:hover {
+        transform: none;
+    }
+}
+
+/* ========================================
+   Site Footer
+   ======================================== */
+
+.site-footer {
+    padding: var(--space-12) 0 var(--space-8);
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+}
+
+/* ========================================
+   Footer Content (brand + navigation)
+   Mobile: stacked
+   ======================================== */
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+.footer-brand h2 {
+    margin: 0;
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.footer-brand p {
+    max-width: 40ch;
+    margin: var(--space-3) 0 0;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ========================================
+   Footer Navigation
+   ======================================== */
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-4);
+}
+
+.footer-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--touch-target-min);
+    padding: 0 var(--space-2);
+
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition:
+        color 180ms ease,
+        background-color 180ms ease;
+}
+
+.footer-nav a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.footer-nav a:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   Footer Bottom (disclaimer + copyright)
+   ======================================== */
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-top: var(--space-8);
+    padding-top: var(--space-5);
+
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* ========================================
+   Footer — Responsive Layout
+   ======================================== */
+
+@media (min-width: 48rem) {
+    .site-footer {
+        padding: var(--space-16) 0 var(--space-8);
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--space-2) var(--space-6);
+    }
+}
+
+@media (min-width: 64rem) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: var(--space-12);
+    }
+
+    .footer-nav {
+        justify-content: flex-end;
+        max-width: 36rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-nav a {
+        transition: none;
+    }
+}
+
+/* ========================================
+   Motion and Micro-interactions
+   Subtle, purposeful, 150-200ms.
+   Placed last so it can refine earlier rules.
+   ======================================== */
+
+/* ----------------------------------------
+   Hero entrance (plays once on page load)
+   Opacity + 8px rise. Content stays fully
+   visible if animation is unavailable.
+   ---------------------------------------- */
+
+@keyframes rahnuma-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero .container > * {
+    animation: rahnuma-fade-up 400ms ease-out both;
+}
+
+.hero .container > :nth-child(2) { animation-delay: 60ms; }
+.hero .container > :nth-child(3) { animation-delay: 120ms; }
+.hero .container > :nth-child(4) { animation-delay: 180ms; }
+
+/* ----------------------------------------
+   Buttons: small press feedback
+   Hover lift already exists, so this only
+   adds the pressed state and a soft shadow.
+   ---------------------------------------- */
+
+.hero-actions .button-primary:hover,
+.community .button:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+.hero-actions .button:active,
+.community .button:active,
+.info-card a[href^="https://admissions.sbbusba.edu.pk"]:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ----------------------------------------
+   Preparation cards: refine existing hover
+   Smaller lift (1px) and a transition that
+   also covers the link color.
+   ---------------------------------------- */
+
+.preparation-card:hover {
+    transform: translateY(-1px);
+}
+
+.preparation-card:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.preparation-card a {
+    transition: color 180ms ease;
+}
+
+/* ----------------------------------------
+   Journey steps: dot responds to hover
+   Only the interactive link reacts. The dot
+   gets a soft ring using the primary color.
+   ---------------------------------------- */
+
+.journey-step-number {
+    transition:
+        background-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.journey-step a:hover .journey-step-number {
+    background-color: var(--color-primary-hover);
+    box-shadow: 0 0 0 4px var(--color-surface);
+}
+
+.journey-step a strong {
+    transition: color 180ms ease;
+}
+
+/* ----------------------------------------
+   Theme toggle: gentle press feedback
+   ---------------------------------------- */
+
+.theme-toggle:active {
+    transform: translateY(0);
+}
+
+/* ----------------------------------------
+   Mobile menu button
+   ---------------------------------------- */
+
+.nav-toggle {
+    transition:
+        background-color 180ms ease,
+        border-color 180ms ease;
+}
+
+.nav-toggle:hover {
+    background-color: var(--color-surface-alt);
+    border-color: var(--color-primary);
+}
+
+/* ----------------------------------------
+   Logo and footer text links
+   Color-only transitions, no movement.
+   ---------------------------------------- */
+
+.site-logo {
+    transition: color 180ms ease;
+}
+
+.site-logo:hover {
+    color: var(--color-primary-hover);
+}
+
+.source-note a,
+.info-card a {
+    transition: color 180ms ease;
+}
+
+/* ----------------------------------------
+   Reduced motion
+   Removes the entrance animation and every
+   transform. Colors and shadows still change,
+   and focus indicators are untouched.
+   ---------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .hero .container > * {
+        animation: none;
+    }
+
+    .hero-actions .button:hover,
+    .hero-actions .button:active,
+    .community .button:hover,
+    .community .button:active,
+    .info-card a[href^="https://admissions.sbbusba.edu.pk"]:active,
+    .preparation-card:hover,
+    .preparation-card:active,
+    .theme-toggle:hover,
+    .theme-toggle:active {
+        transform: none;
+    }
+}
+/* ========================================
+   Scroll Reveal Motion
+   ======================================== */
+
+@keyframes rahnuma-reveal-up {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html.motion-enabled .reveal:not(.is-visible) {
+        opacity: 0;
+    }
+
+    html.motion-enabled .reveal.is-visible {
+        animation: rahnuma-reveal-up 500ms ease-out var(--reveal-delay, 0ms) backwards;
+    }
+}
